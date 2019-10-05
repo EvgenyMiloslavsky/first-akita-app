@@ -1,0 +1,16 @@
+<div class="todo" fxLayout="row" fxLayoutAlign="space-between center">
+  <!--  <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>-->
+  <mat-checkbox
+    class="example-margin"
+    color="warn"
+    [formControl]="control"
+    >
+  </mat-checkbox>
+  <p class="mat-h2 todo-title">{{todo.title}}</p>
+  <button mat-mini-fab
+          color="warn"
+          aria-label="Example icon-button with a heart icon"
+          (click)="delete.emit(todo.id)">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

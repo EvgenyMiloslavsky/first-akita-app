@@ -1,0 +1,11 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div fxLayout="column" fxFlex="500px" style="text-align: center">
+    <h4 class="mat-display-1">Todos</h4>
+    <app-todo  fxFlex="70px"
+               *ngFor="let todo of todos"
+              (delete)="delete.emit($event)"
+              (complete)="complete.emit($event)" [todo]="todo">
+
+    </app-todo>
+  </div>
+</div>

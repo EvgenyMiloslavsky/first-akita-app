@@ -1,0 +1,10 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+<mat-form-field class="filter-form-field">
+<!--  <mat-label>Favorite food</mat-label>-->
+  <mat-select [formControl]="control">
+    <mat-option *ngFor="let filter of filters" [value]="filter.value">
+      {{filter.label}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</div>

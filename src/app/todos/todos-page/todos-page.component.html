@@ -1,0 +1,14 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <section class="todo-class-container">
+    <form class="example-form" fxLayout="row" fxLayoutAlign="center center">
+      <mat-icon class="icon">add_alarm</mat-icon>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Add Todo..." #input (keydown.enter)="add(input)">
+      </mat-form-field>
+    </form>
+    <app-todos-filter (update)="changeFilter($event)" [filters]=filters [active]="activeFilter$ | async" ></app-todos-filter>
+    <app-todos [todos]="todos$ | async"
+               (complete)="complete($event)"
+               (delete)="delete($event)"></app-todos>
+  </section>
+</div>
